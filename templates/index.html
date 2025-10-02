@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f7f7f7;
+        }
+        .container {
+            background: #fff;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background: #ff4d4f;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e63e3f;
+        }
+    </style>
 </head>
 <body>
-    <h1>YouTube 视频下载器</h1>
-    <form action="/download" method="post">
-        <label>视频链接:</label>
-        <input type="text" name="url" required style="width:400px;">
-        <button type="submit">下载</button>
-    </form>
+    <div class="container">
+        <h1>YouTube 视频下载器</h1>
+        <form action="/download" method="post">
+            <label for="url" style="display:none;">视频链接:</label>
+            <input type="text" name="url" id="url" placeholder="请输入 YouTube 链接" required>
+            <button type="submit">下载</button>
+        </form>
+    </div>
 </body>
 </html>
