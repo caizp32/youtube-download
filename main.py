@@ -12,9 +12,12 @@ templates = Jinja2Templates(directory="templates")
 
 def download_youtube(url: str) -> str:
     ydl_opts = {
-        'outtmpl': f'{DOWNLOAD_DIR}/%(title)s.%(ext)s',
-        'format': 'bestvideo+bestaudio/best',
-        'noplaylist': True,  # 不下载整个播放列表
+        #'outtmpl': f'{DOWNLOAD_DIR}/%(title)s.%(ext)s',
+        #'format': 'bestvideo+bestaudio/best',
+        #'noplaylist': True,  # 不下载整个播放列表
+        'format': 'best[ext=mp4]', # Try a more general MP4 format 
+        'outtmpl': '%(title)s.%(ext)s', 
+        'noplaylist': True, # Download only the video, not the entire playlist
     }
     with YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(url, download=True)
