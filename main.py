@@ -21,8 +21,8 @@ def download_youtube(url: str) -> str:
         'format': 'best[ext=mp4]', # Try a more general MP4 format 
         'outtmpl': '%(title)s.%(ext)s', 
         'noplaylist': True, # Download only the video, not the entire playlist
-        'cookiefile': None,   # 不需要手动写文件
-        'cookies': cookies,   # 直接传入 cookie 对象
+        'cookiefile': 'cookies.txt',   # 不需要手动写文件
+        #'cookies': cookies,   # 直接传入 cookie 对象
     }
     with YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(url, download=True)
