@@ -3,3 +3,4 @@ uvicorn[standard]
 yt-dlp
 jinja2
 python-multipart
+browser-cookie3
