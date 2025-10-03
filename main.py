@@ -2,7 +2,6 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 import os
-#import browser_cookie3
 from yt_dlp import YoutubeDL
 
 app = FastAPI()
@@ -10,8 +9,6 @@ DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 templates = Jinja2Templates(directory="templates")
-# 自动从浏览器获取 Cookie（支持 Chrome / Edge / Firefox）
-#cookies = browser_cookie3.chrome()    #'cookies': cookies,   # 直接传入 cookie 对象
 
 def download_youtube(url: str) -> str:
     ydl_opts = {
