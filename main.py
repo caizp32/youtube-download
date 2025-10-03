@@ -2,6 +2,7 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 import os
+import browser_cookie3
 from yt_dlp import YoutubeDL
 
 app = FastAPI()
